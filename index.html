@@ -1990,72 +1990,79 @@
         </div>
     </section>
 
-    <!-- 🎬 NEW: Video Tutorial Section with YouTube Shorts Embed -->
-    <section class="section" id="tutorial" style="background: var(--bg-secondary);">
-        <div class="container">
-            <div class="section-header">
-                <h2>🎬 ভিডিও টিউটোরিয়াল</h2>
-                <p>অ্যাপটি কিভাবে ডাউনলোড ও ব্যবহার করবেন - ১ মিনিটে শিখুন</p>
-            </div>
-            
-            <!-- YouTube Shorts Click-to-Play Embed -->
-            <div class="video-container">
-                <div class="video-wrapper" id="shortsWrapper">
+    <!-- 🎬 Video Tutorial Section - FIXED: No Redirect -->
+<section class="section" id="tutorial" style="background: var(--bg-secondary);">
+    <div class="container">
+        <div class="section-header">
+            <h2>🎬 ভিডিও টিউটোরিয়াল</h2>
+            <p>অ্যাপটি কিভাবে ডাউনলোড ও ব্যবহার করবেন - ১ মিনিটে শিখুন</p>
+        </div>
+        
+        <!-- YouTube Embed: Click-to-Play (No Redirect) -->
+        <div class="video-container">
+            <div class="video-wrapper" id="shortsWrapper">
+                
+                <!-- Thumbnail Preview (loads first) -->
+                <div class="video-preview" id="videoPreview" style="cursor: pointer; position: relative; padding-top: 177.78%; background: linear-gradient(135deg, #1a2e1a, #2e7d32); border-radius: 24px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.15);">
                     
-                    <!-- Thumbnail Preview (loads first) -->
-                    <div class="video-preview" id="videoPreview" style="cursor: pointer; position: relative; padding-top: 177.78%; background: linear-gradient(135deg, #1a2e1a, #2e7d32); border-radius: 24px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.15);">
-                        
-                        <!-- Thumbnail Image -->
-                        <img src="https://i.ytimg.com/vi/Vwra_0dftww/maxresdefault.jpg" 
-                             alt="SSC 2026 প্রস্তুতি ভিডিও" 
-                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.9;"
-                             onerror="this.src='https://i.ytimg.com/vi/Vwra_0dftww/hqdefault.jpg'">
-                        
-                        <!-- Play Button Overlay -->
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 72px; height: 72px; background: rgba(255, 255, 255, 0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: all 0.3s ease;">
-                            <i class="fas fa-play" style="color: #ff0000; font-size: 28px; margin-left: 4px;"></i>
-                        </div>
-                        
-                        <!-- Shorts Badge -->
-                        <div style="position: absolute; top: 16px; right: 16px; background: #ff0000; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 4px;">
-                            <i class="fab fa-youtube"></i> Shorts
-                        </div>
-                        
-                        <!-- Duration Badge -->
-                        <div style="position: absolute; bottom: 16px; right: 16px; background: rgba(0,0,0,0.8); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 500;">
-                            0:58
-                        </div>
+                    <!-- Thumbnail Image -->
+                    <img src="https://i.ytimg.com/vi/Vwra_0dftww/maxresdefault.jpg" 
+                         alt="SSC 2026 প্রস্তুতি ভিডিও" 
+                         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.9;"
+                         onerror="this.src='https://i.ytimg.com/vi/Vwra_0dftww/hqdefault.jpg'">
+                    
+                    <!-- Play Button Overlay -->
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 72px; height: 72px; background: rgba(255, 255, 255, 0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: all 0.3s ease;">
+                        <i class="fas fa-play" style="color: #ff0000; font-size: 28px; margin-left: 4px;"></i>
                     </div>
                     
-                    <!-- Actual YouTube iframe (hidden initially) -->
-                    <iframe id="youtubeIframe" 
-                            style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 24px;"
-                            src="" 
-                            title="YouTube Shorts Player" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            allowfullscreen
-                            loading="lazy">
-                    </iframe>
+                    <!-- YouTube Badge -->
+                    <div style="position: absolute; top: 16px; right: 16px; background: #ff0000; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                        <i class="fab fa-youtube"></i> ভিডিও
+                    </div>
                     
+                    <!-- Duration Badge -->
+                    <div style="position: absolute; bottom: 16px; right: 16px; background: rgba(0,0,0,0.8); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 500;">
+                        0:58
+                    </div>
                 </div>
                 
-                <!-- Video Caption -->
-                <p style="text-align: center; margin-top: 16px; color: var(--text-secondary, #4a5a4a); font-size: 14px;">
-                    <i class="fas fa-info-circle"></i> ক্লিক করে ভিডিওটি দেখুন • অফলাইন মোডে কাজ করবে না
-                </p>
+                <!-- YouTube iframe (hidden initially) - FIXED URL -->
+                <iframe id="youtubeIframe" 
+                        style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 24px; background: #000;"
+                        src="" 
+                        title="YouTube video player" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen
+                        loading="lazy"
+                        sandbox="allow-same-origin allow-scripts allow-popups allow-presentation">
+                </iframe>
                 
-                <!-- Fallback Link -->
-                <p style="text-align: center; margin-top: 8px; font-size: 13px;">
-                    ভিডিও লোড না হলে? 
-                    <a href="https://youtube.com/shorts/Vwra_0dftww" target="_blank" 
-                       style="color: var(--primary, #1b5e20); text-decoration: none; font-weight: 500;">
-                        YouTube-এ সরাসরি দেখুন <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </p>
+                <!-- Loading Indicator -->
+                <div id="videoLoading" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center;">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 32px; margin-bottom: 12px;"></i>
+                    <div style="font-size: 14px;">ভিডিও লোড হচ্ছে...</div>
+                </div>
+                
             </div>
             
+            <!-- Video Caption - Updated Text -->
+            <p style="text-align: center; margin-top: 16px; color: var(--text-secondary, #4a5a4a); font-size: 14px;">
+                <i class="fas fa-info-circle"></i> ক্লিক করলে ভিডিওটি এখানেই চলবে • ইন্টারনেট প্রয়োজন
+            </p>
+            
+            <!-- Better Fallback Link (opens in popup, not redirect) -->
+            <p style="text-align: center; margin-top: 8px; font-size: 13px;">
+                ভিডিও লোড না হলে? 
+                <a href="#" onclick="openYouTubePopup('Vwra_0dftww'); return false;" 
+                   style="color: var(--primary, #1b5e20); text-decoration: none; font-weight: 500;">
+                    নতুন ট্যাবে YouTube-এ দেখুন <i class="fas fa-external-link-alt"></i>
+                </a>
+            </p>
         </div>
-    </section>
+        
+    </div>
+</section>
 
     <!-- Subjects Section -->
     <section class="section" id="subjects">
@@ -2901,28 +2908,72 @@
             window.requestAnimationFrame(step);
         }
         
-        // ===== YOUTUBE SHORTS CLICK-TO-PLAY =====
-        document.addEventListener('DOMContentLoaded', function() {
-            const preview = document.getElementById('videoPreview');
-            const iframe = document.getElementById('youtubeIframe');
-            const wrapper = document.getElementById('shortsWrapper');
+        // ===== YOUTUBE VIDEO: Click-to-Play (NO REDIRECT) =====
+document.addEventListener('DOMContentLoaded', function() {
+    const preview = document.getElementById('videoPreview');
+    const iframe = document.getElementById('youtubeIframe');
+    const wrapper = document.getElementById('shortsWrapper');
+    const loading = document.getElementById('videoLoading');
+    
+    if (preview && iframe) {
+        preview.addEventListener('click', function() {
+            // Show loading indicator
+            if (loading) loading.style.display = 'block';
             
-            if (preview && iframe) {
-                preview.addEventListener('click', function() {
-                    // Load YouTube embed URL with privacy-enhanced mode
-                    iframe.src = 'https://www.youtube-nocookie.com/embed/Vwra_0dftww?shorts=1&autoplay=1&rel=0&modestbranding=1&playsinline=1';
-                    
-                    // Hide preview, show iframe
-                    preview.style.display = 'none';
-                    iframe.style.display = 'block';
-                    
-                    // Add loading animation
-                    wrapper.style.boxShadow = '0 0 0 3px rgba(255, 183, 77, 0.5)';
-                    setTimeout(() => {
-                        wrapper.style.boxShadow = '';
-                    }, 1000);
-                });
-            }
+            // ✅ FIXED: Standard embed URL (NO shorts=1 parameter)
+            // This prevents YouTube from forcing app redirect
+            const videoId = 'Vwra_0dftww';
+            const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1&fs=0&start=0`;
+            
+            // Set iframe source
+            iframe.src = embedUrl;
+            
+            // Hide preview, show iframe
+            preview.style.display = 'none';
+            iframe.style.display = 'block';
+            
+            // Add visual feedback
+            wrapper.style.boxShadow = '0 0 0 3px rgba(255, 183, 77, 0.5)';
+            
+            // Handle iframe load
+            iframe.onload = function() {
+                if (loading) loading.style.display = 'none';
+                wrapper.style.boxShadow = '';
+            };
+            
+            // Handle load error (fallback)
+            iframe.onerror = function() {
+                if (loading) loading.style.display = 'none';
+                showToast('ভিডিও লোড করতে সমস্যা হয়েছে। নতুন ট্যাবে খুলুন।');
+                openYouTubePopup(videoId);
+            };
+            
+            // Timeout fallback (if iframe doesn't load in 10 seconds)
+            setTimeout(() => {
+                if (iframe.style.display === 'block' && iframe.contentDocument === null) {
+                    if (loading) loading.style.display = 'none';
+                    showToast('ভিডিও লোড হচ্ছে না। নতুন ট্যাবে খুলুন।');
+                    openYouTubePopup(videoId);
+                }
+            }, 10000);
+        });
+    }
+});
+
+// ✅ Opens YouTube in a popup window (not redirecting main page)
+function openYouTubePopup(videoId) {
+    const url = `https://youtube.com/watch?v=${videoId}`;
+    const width = Math.min(400, window.innerWidth * 0.9);
+    const height = Math.min(700, window.innerHeight * 0.8);
+    const left = (window.innerWidth - width) / 2;
+    const top = (window.innerHeight - height) / 2;
+    
+    window.open(
+        url, 
+        'youtubePopup', 
+        `width=${width},height=${height},left=${left},top=${top},toolbar=no,menubar=no,scrollbars=yes,resizable=yes`
+    );
+}
             
             // Initialize visitor counter
             initVisitorCounter();
