@@ -11,9 +11,9 @@
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="SSC 2026 প্রিমিয়াম প্রস্তুতি | সম্পূর্ণ সিলেবাস কাভারেজ">
     <meta property="og:description" content="১০০ টাকায় সীমাহীন MCQ, CQ, থিওরি। বন্ধু আনো, টাকা আয়ো!">
-    <meta property="og:url" content="https://nationalexamcenter.github.io/premium">
+    <meta property="og:url" content="https://shuvo2hossen.github.io/">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://nationalexamcenter.github.io/premium/og-image.jpg">
+    <meta property="og:image" content="https://shuvo2hossen.github.io/og-image.jpg">
     
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -695,6 +695,89 @@
         .feature-card p {
             color: var(--text-secondary);
             font-size: var(--text-sm);
+        }
+        
+        /* ===== VIDEO TUTORIAL SECTION ===== */
+        .video-container {
+            max-width: 400px;
+            margin: 32px auto;
+            padding: 0 16px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--bg-tertiary, #e8f5e9);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .video-preview {
+            position: relative;
+            width: 100%;
+            padding-top: 177.78%; /* 9:16 aspect ratio for Shorts */
+            background: linear-gradient(135deg, #1a2e1a, #2e7d32);
+            border-radius: 24px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-preview:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+        }
+
+        .video-preview img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-preview:hover img {
+            opacity: 0.7;
+        }
+
+        /* Play button animation */
+        .video-preview .fa-play {
+            transition: transform 0.2s ease;
+        }
+
+        .video-preview:hover .fa-play {
+            transform: scale(1.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .video-container {
+                max-width: 100%;
+                margin: 24px auto;
+            }
+            
+            .video-preview {
+                border-radius: 20px;
+            }
+            
+            .video-preview .fa-play {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+        }
+
+        /* Dark mode support */
+        [data-theme="dark"] .video-preview {
+            background: linear-gradient(135deg, #0f1a12, #1a3a1a);
+        }
+
+        [data-theme="dark"] .video-preview .fa-play {
+            color: #ff5252;
         }
         
         /* ===== SUBJECTS SECTION ===== */
@@ -1785,10 +1868,10 @@
                     <i class="fas fa-check-circle"></i> Android 5.0+ | 39 MB | অফলাইন মোড সমর্থিত
                 </p>
                 
-                <!-- Hero Stats -->
+                <!-- Hero Stats with Visitor Counter (1100+ base) -->
                 <div class="hero-stats">
                     <div class="hero-stat">
-                        <div class="hero-stat-value" id="visitorCount">১,৫২৮</div>
+                        <div class="hero-stat-value" id="visitorCount">১,১০০+</div>
                         <div class="hero-stat-label">মোট দর্শক</div>
                     </div>
                     <div class="hero-stat">
@@ -1907,8 +1990,75 @@
         </div>
     </section>
 
+    <!-- 🎬 NEW: Video Tutorial Section with YouTube Shorts Embed -->
+    <section class="section" id="tutorial" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <h2>🎬 ভিডিও টিউটোরিয়াল</h2>
+                <p>অ্যাপটি কিভাবে ডাউনলোড ও ব্যবহার করবেন - ১ মিনিটে শিখুন</p>
+            </div>
+            
+            <!-- YouTube Shorts Click-to-Play Embed -->
+            <div class="video-container">
+                <div class="video-wrapper" id="shortsWrapper">
+                    
+                    <!-- Thumbnail Preview (loads first) -->
+                    <div class="video-preview" id="videoPreview" style="cursor: pointer; position: relative; padding-top: 177.78%; background: linear-gradient(135deg, #1a2e1a, #2e7d32); border-radius: 24px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.15);">
+                        
+                        <!-- Thumbnail Image -->
+                        <img src="https://i.ytimg.com/vi/Vwra_0dftww/maxresdefault.jpg" 
+                             alt="SSC 2026 প্রস্তুতি ভিডিও" 
+                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.9;"
+                             onerror="this.src='https://i.ytimg.com/vi/Vwra_0dftww/hqdefault.jpg'">
+                        
+                        <!-- Play Button Overlay -->
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 72px; height: 72px; background: rgba(255, 255, 255, 0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: all 0.3s ease;">
+                            <i class="fas fa-play" style="color: #ff0000; font-size: 28px; margin-left: 4px;"></i>
+                        </div>
+                        
+                        <!-- Shorts Badge -->
+                        <div style="position: absolute; top: 16px; right: 16px; background: #ff0000; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                            <i class="fab fa-youtube"></i> Shorts
+                        </div>
+                        
+                        <!-- Duration Badge -->
+                        <div style="position: absolute; bottom: 16px; right: 16px; background: rgba(0,0,0,0.8); color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 500;">
+                            0:58
+                        </div>
+                    </div>
+                    
+                    <!-- Actual YouTube iframe (hidden initially) -->
+                    <iframe id="youtubeIframe" 
+                            style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 24px;"
+                            src="" 
+                            title="YouTube Shorts Player" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen
+                            loading="lazy">
+                    </iframe>
+                    
+                </div>
+                
+                <!-- Video Caption -->
+                <p style="text-align: center; margin-top: 16px; color: var(--text-secondary, #4a5a4a); font-size: 14px;">
+                    <i class="fas fa-info-circle"></i> ক্লিক করে ভিডিওটি দেখুন • অফলাইন মোডে কাজ করবে না
+                </p>
+                
+                <!-- Fallback Link -->
+                <p style="text-align: center; margin-top: 8px; font-size: 13px;">
+                    ভিডিও লোড না হলে? 
+                    <a href="https://youtube.com/shorts/Vwra_0dftww" target="_blank" 
+                       style="color: var(--primary, #1b5e20); text-decoration: none; font-weight: 500;">
+                        YouTube-এ সরাসরি দেখুন <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </p>
+            </div>
+            
+        </div>
+    </section>
+
     <!-- Subjects Section -->
-    <section class="section" id="subjects" style="background: var(--bg-secondary);">
+    <section class="section" id="subjects">
         <div class="container">
             <div class="section-header">
                 <h2>📚 সম্পূর্ণ সিলেবাস কাভারেজ</h2>
@@ -2338,7 +2488,7 @@
                         <li><a href="tel:+8801739324222"><i class="fas fa-phone"></i> 01739324222</a></li>
                         <li><a href="https://wa.me/8801602105447" target="_blank"><i class="fab fa-whatsapp"></i> +8801602105447</a></li>
                         <li><a href="mailto:nationalexamcenter@gmail.com"><i class="fas fa-envelope"></i> nationalexamcenter@gmail.com</a></li>
-                        <li><a href="https://nationalexamcenter.github.io/premium" target="_blank"><i class="fas fa-globe"></i> nationalexamcenter.github.io</a></li>
+                        <li><a href="https://shuvo2hossen.github.io/" target="_blank"><i class="fas fa-globe"></i> shuvo2hossen.github.io</a></li>
                     </ul>
                 </div>
             </div>
@@ -2504,7 +2654,6 @@
         setInterval(updateCountdown, 1000);
         
         // ===== PROGRESS TRACKER ANIMATION =====
-        // Simulate progress loading
         setTimeout(() => {
             const targetProgress = 75;
             let currentProgress = 0;
@@ -2524,7 +2673,6 @@
         }, 500);
         
         // ===== SUBJECT SEARCH & FILTER =====
-        // Search functionality
         if (subjectSearch) {
             subjectSearch.addEventListener('input', (e) => {
                 const searchTerm = e.target.value.toLowerCase();
@@ -2543,7 +2691,6 @@
                         }
                     });
                     
-                    // Show/hide card based on search
                     if (searchTerm === '' || hasMatch) {
                         card.style.display = 'flex';
                     } else {
@@ -2553,10 +2700,8 @@
             });
         }
         
-        // Filter functionality
         filterTags.forEach(tag => {
             tag.addEventListener('click', () => {
-                // Update active state
                 filterTags.forEach(t => t.classList.remove('active'));
                 tag.classList.add('active');
                 
@@ -2565,7 +2710,6 @@
                 subjectCards.forEach(card => {
                     if (filter === 'all' || card.getAttribute('data-category') === filter) {
                         card.style.display = 'flex';
-                        // Re-trigger animation
                         card.style.opacity = '0';
                         card.style.transform = 'translateY(20px)';
                         setTimeout(() => {
@@ -2586,22 +2730,18 @@
                 const answer = question.nextElementSibling;
                 const icon = question.querySelector('i');
                 
-                // Toggle active class
                 question.classList.toggle('active');
                 
-                // Toggle answer visibility
                 if (answer.classList.contains('show')) {
                     answer.classList.remove('show');
                     answer.style.maxHeight = '0';
                 } else {
-                    // Close other open FAQs
                     document.querySelectorAll('.faq-answer.show').forEach(openAnswer => {
                         openAnswer.classList.remove('show');
                         openAnswer.style.maxHeight = '0';
                         openAnswer.previousElementSibling.classList.remove('active');
                     });
                     
-                    // Open this one
                     answer.classList.add('show');
                     answer.style.maxHeight = answer.scrollHeight + 'px';
                 }
@@ -2610,7 +2750,6 @@
         
         // ===== REFERRAL CODE COPY =====
         if (copyReferralBtn && referralCodeEl) {
-            // Generate random referral code if not in localStorage
             let referralCode = localStorage.getItem('ssc_ref_code_v2');
             if (!referralCode) {
                 const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -2627,7 +2766,6 @@
                 try {
                     await navigator.clipboard.writeText(referralCode);
                     
-                    // Visual feedback
                     const originalText = copyReferralBtn.innerHTML;
                     copyReferralBtn.innerHTML = '<i class="fas fa-check"></i> কপি হয়েছে!';
                     copyReferralBtn.classList.add('copied');
@@ -2637,7 +2775,6 @@
                         copyReferralBtn.classList.remove('copied');
                     }, 2000);
                     
-                    // Show toast notification
                     showToast('রেফারেল কোড কপি হয়েছে! বন্ধুদের শেয়ার করুন।');
                 } catch (err) {
                     console.error('Failed to copy:', err);
@@ -2648,11 +2785,9 @@
         
         // ===== TOAST NOTIFICATION =====
         function showToast(message) {
-            // Remove existing toast if any
             const existingToast = document.getElementById('toast-notification');
             if (existingToast) existingToast.remove();
             
-            // Create toast element
             const toast = document.createElement('div');
             toast.id = 'toast-notification';
             toast.style.cssText = `
@@ -2678,12 +2813,10 @@
             
             document.body.appendChild(toast);
             
-            // Animate in
             setTimeout(() => {
                 toast.style.transform = 'translateX(-50%) translateY(0)';
             }, 100);
             
-            // Auto remove after 3 seconds
             setTimeout(() => {
                 toast.style.transform = 'translateX(-50%) translateY(100px)';
                 setTimeout(() => {
@@ -2717,14 +2850,50 @@
             observer.observe(el);
         });
         
-        // ===== DYNAMIC STATS COUNTER =====
+        // ===== VISITOR COUNTER (Starting at 1100+) =====
+        function initVisitorCounter() {
+            const visitorKey = 'ssc_visitor_count_v2';
+            let visitorCount = localStorage.getItem(visitorKey);
+            
+            // Initialize with 1100 base if not set
+            if (!visitorCount) {
+                visitorCount = 1100;
+                localStorage.setItem(visitorKey, visitorCount);
+            } else {
+                visitorCount = parseInt(visitorCount);
+                // Increment once per session
+                if (!sessionStorage.getItem('visitor_incremented_v2')) {
+                    visitorCount += Math.floor(Math.random() * 3) + 1; // Add 1-3 randomly
+                    localStorage.setItem(visitorKey, visitorCount);
+                    sessionStorage.setItem('visitor_incremented_v2', 'true');
+                }
+            }
+            
+            // Format and display in Bengali numbers
+            const bengaliDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+            const formattedCount = visitorCount.toString().replace(/\d/g, d => bengaliDigits[d]);
+            
+            const visitorEl = document.getElementById('visitorCount');
+            if (visitorEl) {
+                // Animate the number
+                animateValue(visitorEl, 1100, visitorCount, 2000);
+            }
+        }
+        
+        // Animate counter value
         function animateValue(element, start, end, duration) {
             let startTimestamp = null;
+            const bengaliDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+            
             const step = (timestamp) => {
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
                 const value = Math.floor(progress * (end - start) + start);
-                element.textContent = value.toLocaleString('bn');
+                
+                // Convert to Bengali numerals
+                const bengaliValue = value.toString().replace(/\d/g, d => bengaliDigits[d]);
+                element.textContent = bengaliValue + (value >= 1100 ? '+' : '');
+                
                 if (progress < 1) {
                     window.requestAnimationFrame(step);
                 }
@@ -2732,41 +2901,42 @@
             window.requestAnimationFrame(step);
         }
         
-        // Animate stats when in view
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Animate visitor count
-                    animateValue(document.getElementById('visitorCount'), 1528, 1528, 0);
-                    animateValue(document.getElementById('registeredUsers'), 812, 812, 0);
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        if (document.getElementById('visitorCount')) {
-            statsObserver.observe(document.getElementById('visitorCount'));
-        }
-        
-        // ===== LAZY LOAD IMAGES (Placeholder for future) =====
-        // This can be extended to lazy load subject icons or testimonial avatars
-        
-        // ===== FORMATTING NUMBERS IN BENGALI =====
-        function toBengaliNumber(number) {
-            const bengaliDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
-            return number.toString().replace(/\d/g, d => bengaliDigits[d]);
-        }
-        
-        // Apply Bengali numbers to stats on load
-        document.addEventListener('DOMContentLoaded', () => {
-            const statElements = document.querySelectorAll('.hero-stat-value, .referral-stat-value');
-            statElements.forEach(el => {
-                const text = el.textContent;
-                if (/^\d/.test(text)) {
-                    // Simple conversion for demo
-                    el.textContent = text.replace(/\d+/g, match => toBengaliNumber(match));
-                }
-            });
+        // ===== YOUTUBE SHORTS CLICK-TO-PLAY =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const preview = document.getElementById('videoPreview');
+            const iframe = document.getElementById('youtubeIframe');
+            const wrapper = document.getElementById('shortsWrapper');
+            
+            if (preview && iframe) {
+                preview.addEventListener('click', function() {
+                    // Load YouTube embed URL with privacy-enhanced mode
+                    iframe.src = 'https://www.youtube-nocookie.com/embed/Vwra_0dftww?shorts=1&autoplay=1&rel=0&modestbranding=1&playsinline=1';
+                    
+                    // Hide preview, show iframe
+                    preview.style.display = 'none';
+                    iframe.style.display = 'block';
+                    
+                    // Add loading animation
+                    wrapper.style.boxShadow = '0 0 0 3px rgba(255, 183, 77, 0.5)';
+                    setTimeout(() => {
+                        wrapper.style.boxShadow = '';
+                    }, 1000);
+                });
+            }
+            
+            // Initialize visitor counter
+            initVisitorCounter();
+            
+            // Trigger scroll to check header state
+            window.dispatchEvent(new Event('scroll'));
+            
+            // Show welcome toast for first-time visitors
+            if (!sessionStorage.getItem('welcomeShown')) {
+                setTimeout(() => {
+                    showToast('স্বাগতম! SSC 2026 প্রিমিয়াম প্রস্তুতি অ্যাপে।');
+                    sessionStorage.setItem('welcomeShown', 'true');
+                }, 2000);
+            }
         });
         
         // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
@@ -2786,7 +2956,7 @@
             });
         });
         
-        // ===== PERFORMANCE: DEBOUNCE SEARCH =====
+        // ===== DEBOUNCE FUNCTION =====
         function debounce(func, wait) {
             let timeout;
             return function executedFunction(...args) {
@@ -2802,35 +2972,26 @@
         // Apply debounce to search input
         if (subjectSearch) {
             subjectSearch.addEventListener('input', debounce((e) => {
-                // Search logic already implemented above
+                // Search logic already implemented
             }, 300));
         }
         
-        // ===== INITIALIZE: Set initial progress for demo =====
-        document.addEventListener('DOMContentLoaded', () => {
-            // Set initial progress for demo purposes
-            progressFill.style.width = '0%';
-            
-            // Trigger scroll to check header state
-            window.dispatchEvent(new Event('scroll'));
-            
-            // Show welcome toast for first-time visitors
-            if (!sessionStorage.getItem('welcomeShown')) {
-                setTimeout(() => {
-                    showToast('স্বাগতম! SSC 2026 প্রিমিয়াম প্রস্তুতি অ্যাপে।');
-                    sessionStorage.setItem('welcomeShown', 'true');
-                }, 2000);
-            }
-        });
+        // ===== FORMAT NUMBERS IN BENGALI =====
+        function toBengaliNumber(number) {
+            const bengaliDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+            return number.toString().replace(/\d/g, d => bengaliDigits[d]);
+        }
         
-        // ===== SERVICE WORKER REGISTRATION (PWA - Placeholder) =====
-        // if ('serviceWorker' in navigator) {
-        //     window.addEventListener('load', () => {
-        //         navigator.serviceWorker.register('/sw.js')
-        //             .then(reg => console.log('SW registered:', reg))
-        //             .catch(err => console.log('SW failed:', err));
-        //     });
-        // }
+        // Apply Bengali numbers to stats on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const statElements = document.querySelectorAll('.hero-stat-value, .referral-stat-value');
+            statElements.forEach(el => {
+                const text = el.textContent;
+                if (/^\d/.test(text) && !text.includes('+')) {
+                    el.textContent = text.replace(/\d+/g, match => toBengaliNumber(match));
+                }
+            });
+        });
     </script>
 </body>
 </html>
